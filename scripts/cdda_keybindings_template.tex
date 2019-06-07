@@ -1,0 +1,105 @@
+% -------------------------------------------------------------------------- %
+% File              cdda_keybindings.tex
+% Author            neitsa
+% Description       "Cataclysm: Dark Days Ahead" shortcuts cheat sheet
+%                   Version 1.0
+% Notes:            Inspired by:    https://tex.stackexchange.com/q/365456
+% Licence:          CC BY-NC-SA: http://creativecommons.org/licenses/by-nc-sa/4.0/
+% -------------------------------------------------------------------------- %
+
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage[margin=1cm,landscape]{geometry}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{mdframed}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{multicol, multirow, booktabs, tabularx, xtab, makecell}
+
+% Shortcuts for the shortcuts
+\newcommand{\hlx}{\\\midrule}
+\newcommand{\cmd}[1]{\textbf{#1}}
+\newcommand{\tbl}{\textbackslash}
+\newcommand{\ctrlp}{Ctrl$+$}
+\newcommand{\ctrlshiftp}{Ctrl$+$Shift$+$}
+\newcommand{\ctrlaltp}{Ctrl$+$Alt$+$}
+\newcommand{\altp}{Alt$+$}
+\newcommand{\shiftp}{Shift$+$}
+\newcommand{\altshiftp}{Alt$+$Shift$+$}
+\newcommand*{\altcmd}{\hspace*{1em}\rule[.5ex]{3.5em}{.4pt}}
+
+% General document settings
+\setlength{\parindent}{0pt}
+\newcommand{\spacebtwtables}{%
+    \newline%
+    \vspace{2.5pt}% %\vspace*{1em}%
+    \newline%
+}
+\pagestyle{empty}
+\sbox9{\scriptsize\libertine%
+    \cmd{\ctrlshiftp \#[0--9]}% Enter the longest command here
+}
+
+% Mdframed settings
+\global\mdfdefinestyle{mystyle}{%
+    linecolor=gray,linewidth=1pt,%
+    leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm
+}
+
+\global\mdfdefinestyle{mystyle_with_color}{%
+    linecolor=gray,linewidth=1pt,%
+    leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
+    backgroundcolor=black!10
+}
+
+% Table settings
+\renewcommand\arraystretch{1.2}
+\renewcommand{\aboverulesep}{0pt}
+\renewcommand{\belowrulesep}{0pt}
+\newcommand{\headbf}[1]{\Large\textbf{#1}}
+\definecolor{impt}{HTML}{E6E7E9}
+%\newcolumntype{P}{>{\columncolor{white}[0pt][\tabcolsep]}X}
+%\newcolumntype{L}{>{\columncolor{white}[\tabcolsep][0pt]}m{\wd9}}
+\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+
+\begin{document}
+    \begin{multicols}{4}
+        % Header/Title
+        \begin{mdframed}[style=mystyle]
+            \begin{center}
+                \fontfamily{pnc}\selectfont
+                \large\scshape{
+                Cataclysm: Dark Days Ahead \\
+                Default Shortcuts \\\bigskip}
+                \normalfont
+                \textbf{\large{Author: neitsa}} \\
+                \footnotesize Last updated: \today \\
+                \footnotesize Licence: \textbf{CC BY-NC-SA}
+            \end{center}
+        \end{mdframed}
+
+        \begin{mdframed}[style=mystyle_with_color]
+            This file is \textbf{automatically generated} from {\small{\tt keybindings.json}} and 
+                {\small{\tt vehicle.json}} into a \LaTeX{} document. \\
+            \begin{itemize}
+              \item Categories (in {\color{blue} blue}) are lexicographically sorted by name.
+              \begin{itemize}
+                \item The unnamed category has been renamed to \textbf{General}.
+              \end{itemize}
+              \item Entries \textendash{} in a category \textendash{} are lexicographically sorted by name.
+              \item Shortcuts \textendash{} in an entry \textendash{} are lexicographically sorted.
+            \end{itemize}
+        \end{mdframed}
+
+        %
+        % Main body
+        \scriptsize
+        \bigskip
+
+%{template}
+
+    \end{multicols}
+\end{document}
